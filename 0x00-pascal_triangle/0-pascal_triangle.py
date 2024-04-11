@@ -1,4 +1,4 @@
-#!/user/bin/python3
+#!/usr/bin/python3
 """Writing a script to determine pascal's triangle for numbers"""
 
 
