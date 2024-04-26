@@ -1,7 +1,7 @@
 #!/usr/bin/python3
 """In a text file, theres is a single character H. Text editor can execute only
-two operations in this file: Copy All and paste. Given a number n write a method
-that calculate the fewest number operations need to result in exactly n.
+two operations in this file: Copy All and paste. Given a number n write a
+method that calculate the fewest number operations need to result in exactly n.
 """
 
 
