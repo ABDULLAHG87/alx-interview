@@ -25,7 +25,6 @@ def validUTF8(data):
                 continue
             if nbytes == 1 or nbytes > 4:
                 return False
-        
         else:
             if not (num & UTF_BIT_1 and not (num & UTF_BIT_2)):
                 return False
