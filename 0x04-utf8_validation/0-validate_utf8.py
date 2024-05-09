@@ -2,18 +2,19 @@
 """ A method that determines if a given data set represent
 a valid UTF-8 encoding"""
 
+
 def validUTF8(data):
     """Method to validate UTF8 of data"""
-    UTF_BIT_1 = 1 << 7 #Negative value
-    UTF_BIT_2 = 1 << 6 #Positive value
+    UTF_BIT_1 = 1 << 7  # Negative value
+    UTF_BIT_2 = 1 << 6  # Positive value
     nbytes = 0
 
     if not data or len(data) == 0:
         return True
 
-    #looping through each byte of the data
+    # looping through each byte of the data
     for num in data:
-        #creating a mask to check most significant Bit (MSB)
+        # creating a mask to check most significant Bit (MSB)
         bit_mask = 1 << 7
         if nbytes == 0:
             while (bit_mask & num):
