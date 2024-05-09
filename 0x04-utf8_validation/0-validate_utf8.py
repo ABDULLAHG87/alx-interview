@@ -17,7 +17,7 @@ def validUTF8(data):
         # creating a mask to check most significant Bit (MSB)
         bit_mask = 1 << 7
         if nbytes == 0:
-            while (bit_mask & num):
+            while bit_mask & num:
                 nbytes += 1
                 bit_mask = bit_mask >> 1
 
@@ -25,14 +25,13 @@ def validUTF8(data):
                 continue
             if nbytes == 1 or nbytes > 4:
                 return False
-            else:
-                if not (num & UTF_BIT_1 and not (num & UTF_BIT_2)):
-                    return False
-            nbytes -= 1
-
+        
         else:
             if not (num & UTF_BIT_1 and not (num & UTF_BIT_2)):
                 return False
-            nbytes -= 1
+        nbytes -= 1
 
-    return nbytes == 0
+    if nbytes == 0:
+        return True
+    else:
+        return False
