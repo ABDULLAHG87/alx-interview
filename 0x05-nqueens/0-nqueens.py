@@ -5,6 +5,7 @@ import sys
 
 
 def is_safe(q, x, array):
+    """Function to determine if queen is in safe_position"""
     if x in array:
         return (False)
     else:
@@ -13,6 +14,7 @@ def is_safe(q, x, array):
 
 
 def place_queen(queen, column, prev_solution):
+    """function to place queen based on prev_solution"""
     safe_position = []
     for array in prev_solution:
         for k in range(column):
@@ -22,6 +24,7 @@ def place_queen(queen, column, prev_solution):
 
 
 def generate_solution(row, column):
+    """Function to generate_solution"""
     solution = [[]]
     for queen in range(row):
         solution = place_queen(queen, column, solution)
@@ -29,6 +32,7 @@ def generate_solution(row, column):
 
 
 def initialize():
+    """Function to initialize the cheshboard game"""
     if len(sys.argv) != 2:
         print("Usage: nqueen N")
         sys.exit(1)
@@ -44,6 +48,7 @@ def initialize():
 
 
 def n_queens():
+    """Function to run the n_queen chessboard results"""
     n = initialize()
     results = generate_solution(n, n)
     for array in results:
